@@ -21,8 +21,10 @@ One echo service is defined as a connection based application on TCP. A server l
 
 Another echo service is defined as a datagram based application on UDP. A server listens for UDP datagrams on UDP port 7. When a datagram is received, the data from it is sent back in an answering datagram.
 
-# License
+# License and Authors
 
-Copyright © 2015 Rogue Ethic
+[Christian Vozar](https://twitter.com/christianvozar) <christian@rogueethic.com>
 
-Use of this source code is governed by a BSD-style license that can be found in the [LICENSE.markdown](LICENSE.markdown) file.
+Copyright © 2015 [Rogue Ethic](https://github.com/rogueethic)
+
+Use of this source code is governed by a BSD-style license that can be found in the [LICENSE](LICENSE.markdown) file.
