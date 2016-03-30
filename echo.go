@@ -1,6 +1,5 @@
-// Copyright © 2015 Rogue Ethic
-// Use of this source code is governed by a BSD-style license that can be found
-// in the LICENSE.markdown file.
+// Copyright © 2015-2016 Christian R. Vozar
+// MIT Licensed.
 
 // Much of the code here is taken from the example in the net package. The
 // purpose here is to illustrate how one might implement this RFC as a package
@@ -18,15 +17,15 @@ import (
 
 // Server defines parameters for running a Echo server.
 type Server struct {
-	Addr string // TCP address to listen on, RFC 862 default of ":7" if empty
+	Address string // TCP address to listen on, RFC 862 default of ":7" if empty
 }
 
-// ListenAndServe listens on the TCP network address srv.Addr and handles
+// ListenAndServe listens on the TCP network address srv.Address and handles
 // requests on incoming connections.
 func (srv *Server) ListenAndServe() error {
-	addr := srv.Addr
+	addr := srv.Address
 	if addr == "" {
-		addr = ":13"
+		addr = ":7"
 	}
 	ln, err := net.Listen("tcp", addr)
 	if err != nil {
@@ -54,6 +53,6 @@ func (srv *Server) ListenAndServe() error {
 // ListenAndServe listens on the TCP network address addr and serves Echo
 // protocol requests in a new goroutine.
 func ListenAndServe(addr string) error {
-	server := &Server{Addr: addr}
+	server := &Server{Address: addr}
 	return server.ListenAndServe()
 }
